@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-bom</artifactId>
-		<version>1.4.8</version>
+		<version>1.4.9</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -25,6 +25,9 @@
 	    <maven.compiler.target>${java-version-compliance}</maven.compiler.target>	
 	    <maven.compiler.release>${java-version-compliance}</maven.compiler.release>
 	    <fj-version>8.4.4</fj-version>
+	    <microprofile-openapi-api-version>3.1.1</microprofile-openapi-api-version>
+	    <fj-service-helper-version>${project.version}</fj-service-helper-version>
+	    <emp-service-model-version>${fj-service-helper-version}</emp-service-model-version>
 	</properties>
 
 	<licenses>
@@ -85,6 +88,8 @@
 	</distributionManagement>
 
 	<modules>
+		<module>emp-service-model</module>
+		<module>fj-service-helper-demo</module>
 	</modules>
 
 	<dependencyManagement>
@@ -96,6 +101,24 @@
 				<artifactId>fj-core</artifactId>
 				<version>${fj-version}</version>
 			</dependency>				
+			
+			<dependency>
+			    <groupId>org.eclipse.microprofile.openapi</groupId>
+			    <artifactId>microprofile-openapi-api</artifactId>
+			    <version>${microprofile-openapi-api-version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>emp-service-model</artifactId>
+				<version>${emp-service-model-version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>fj-service-helper-test</artifactId>
+				<version>${fj-service-helper-version}}</version>
+			</dependency>
 			
 		</dependencies>
 
@@ -116,5 +139,24 @@
 		</dependency>
 		
 	</dependencies>
+	
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>${java.version}</source>
+                <target>${java.version}</target>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 	
 </project>
