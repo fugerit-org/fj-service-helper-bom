@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - sonar cloud quality gate and coverage badge
 
+### Changed
+
+- fj-bom updated to 1.5.0 
+
 [0.1.0 - 2023-11-12]
 
 ### Added 
