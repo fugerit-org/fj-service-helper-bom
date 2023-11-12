@@ -50,7 +50,7 @@ public class DataServiceIO {
 	}
 	
 	/**
-	 * <p>Load a resource as base64 encoded string.</p>
+	 * <p>Save a resource as base64 encoded string.</p>
 	 * 
 	 * @param service		the data service
 	 * @param data			the resource to save
@@ -66,7 +66,7 @@ public class DataServiceIO {
 	}
 	
 	/**
-	 * <p>Load a resource as base64 encoded string.</p>
+	 * <p>Save a resource as base64 encoded string.</p>
 	 * 
 	 * @param service		the data service
 	 * @param base64		the resource to save as base64 encoded string
