@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+[0.1.0 - 2023-11-12]
+
 ### Added 
 
 - Generic Service Response Bean (with message list for errors, warnings, informations and success)

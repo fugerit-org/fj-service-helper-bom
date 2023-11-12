@@ -11,7 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+[0.1.0 - 2023-11-12]
+
 ### Added 
 
 - module emp-service-model
 - [Maven build and sonar cloud scan](.github/workflows/build_maven_package.yml)
+- [Maven release](.github/workflows/deploy_maven_package.yml)
