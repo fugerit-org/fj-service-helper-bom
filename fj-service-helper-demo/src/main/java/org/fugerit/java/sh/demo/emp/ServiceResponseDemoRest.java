@@ -34,5 +34,5 @@ public class ServiceResponseDemoRest {
 		sr.setSuccess(Arrays.asList(new ServiceMessage("200001", ServiceMessage.SEVERITY_SUCCESS, "Operation OK!")));
 		return Response.ok().entity(sr).build();
 	}
-
+	
 }

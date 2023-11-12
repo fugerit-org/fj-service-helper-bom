@@ -17,7 +17,11 @@ This project is a wrapper for some service components abstraction modules :
 
 ## [emp-service-model](emp-service-model/README.md)
 
-Collections of model for services
+Collections of model for services.
+
+## [data-service-base](data-service-base/README.md)
+
+Simple data resources load/save interface layer.
 
 ## [fj-service-helper-demo](fj-service-helper-demo/README.md)
 

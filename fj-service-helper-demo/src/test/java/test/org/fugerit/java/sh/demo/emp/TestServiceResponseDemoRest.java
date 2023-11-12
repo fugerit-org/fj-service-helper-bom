@@ -8,7 +8,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import jakarta.ws.rs.core.Response;
 
 @QuarkusTest
-public class TestServiceResponseDemoRest {
+class TestServiceResponseDemoRest {
 
 	@Test
 	void testDemoOK() {

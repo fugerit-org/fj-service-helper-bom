@@ -90,6 +90,7 @@
 	<modules>
 		<module>emp-service-model</module>
 		<module>fj-service-helper-demo</module>
+		<module>data-service-base</module>
 	</modules>
 
 	<dependencyManagement>
