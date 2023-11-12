@@ -14,3 +14,9 @@ Helper project for service components abstraction
 This project is a wrapper for some service components abstraction modules : 
 
 ## [emp-service-model](emp-service-model/README.md)
+
+Collections of model for services
+
+## [fj-service-helper-demo](fj-service-helper-demo/README.md)
+
+Quarkus demo application for other modules
