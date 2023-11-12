@@ -42,7 +42,11 @@ public class FileDataServiceUUID implements DataService {
 	public InputStream load(String id) throws IOException {
 		File file = this.toFile(id);
 		log.info( "load - file:{} -> id:{}", id, file.getCanonicalPath() );
-		return new FileInputStream(file);
+		if ( file.exists() ) {
+			return new FileInputStream(file);
+		} else {
+			return null;
+		}
 	}
 
 	@Override

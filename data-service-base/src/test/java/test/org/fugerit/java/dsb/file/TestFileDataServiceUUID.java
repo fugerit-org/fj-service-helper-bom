@@ -47,6 +47,7 @@ public class TestFileDataServiceUUID {
 		Assert.assertThrows( NullPointerException.class , () -> service.setStoreFolder( null ) );
 		log.info( "service : {}", service );
 		Assert.assertEquals( STORE_FOLDER , service.getStoreFolder() );
+		Assert.assertNull( DataServiceIO.loadBase64( service, "not-exists" ) );
 	}
 	
 }
