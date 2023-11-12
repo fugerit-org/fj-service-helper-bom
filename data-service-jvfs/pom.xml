@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>emp-service-model</artifactId>
+	<artifactId>data-service-jvfs</artifactId>
 
 	<parent>
 		<groupId>org.fugerit.java</groupId>
@@ -10,8 +10,8 @@
 		<version>0.2.3</version>
 	</parent>
 
-	<name>Eclipse MicroProfile Service Model</name>
-	<description>Collection of basic objects for service interoperability</description>
+	<name>Data Service JVFS</name>
+	<description>JVFS implementation for data resources load/save interface layer.</description>
 
 	<licenses>
 		<license>
@@ -27,15 +27,13 @@
 	<dependencies>
 
 		<dependency>
-		    <groupId>org.eclipse.microprofile.openapi</groupId>
-		    <artifactId>microprofile-openapi-api</artifactId>
-		    <scope>provided</scope>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>data-service-base</artifactId>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		    <scope>provided</scope>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>fj-core-jvfs</artifactId>
 		</dependency>
 
 	</dependencies>

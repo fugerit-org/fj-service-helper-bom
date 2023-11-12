@@ -8,8 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Refer to subproject's changelog for details : 
 
 - [emp-service-model](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/emp-service-model/CHANGELOG.md)
+- [data-service-base](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-base/CHANGELOG.md)
+- [data-service-jvfs](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-jvfs/CHANGELOG.md)
 
 ## [Unreleased]
+
+## [0.2.3 - 2023-11-12]
+
+### Added
+
+- module data-service-jvfs
 
 ## [0.2.2 - 2023-11-12]
 

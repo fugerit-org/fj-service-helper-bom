@@ -23,6 +23,10 @@ Collections of model for services.
 
 Simple data resources load/save interface layer.
 
+## [data-service-jvfs](data-service-jvfs/README.md)
+
+JVFS implementation for data resources load/save interface layer.
+
 ## [fj-service-helper-demo](fj-service-helper-demo/README.md)
 
 Quarkus demo application for other modules

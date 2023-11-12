@@ -11,7 +11,7 @@
 		<relativePath></relativePath>
 	</parent>
 
-	<version>0.2.2</version>
+	<version>0.2.3</version>
 	<packaging>pom</packaging>
 
 	<name>Fugerit Service Helper BOM</name>
@@ -91,6 +91,7 @@
 	<modules>
 		<module>emp-service-model</module>
 		<module>data-service-base</module>
+		<module>data-service-jvfs</module>
 		<module>fj-service-helper-demo</module>
 	</modules>
 
@@ -101,6 +102,12 @@
 			<dependency>
 				<groupId>org.fugerit.java</groupId>
 				<artifactId>fj-core</artifactId>
+				<version>${fj-version}</version>
+			</dependency>	
+			
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>fj-core-jvfs</artifactId>
 				<version>${fj-version}</version>
 			</dependency>				
 			
