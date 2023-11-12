@@ -7,12 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4 - 2023-11-12]
+
+### Chanted
+
+- Added generation id : ${yyyyMMddHHmmss}_${UUID}
+
 ## [0.2.1 - 2023-11-12]
 
 ### Fixed 
 
 - FileDataServiceUUID now correctly handles not existing ID.
-
 
 ## [0.2.0 - 2023-11-12]
 

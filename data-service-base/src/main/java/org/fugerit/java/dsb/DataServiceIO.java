@@ -3,7 +3,10 @@ package org.fugerit.java.dsb;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.Base64;
+import java.util.Date;
+import java.util.UUID;
 
 import org.fugerit.java.core.io.StreamIO;
 
@@ -75,6 +78,16 @@ public class DataServiceIO {
 	 */
 	public static String saveBase64( DataService service, String base64 ) throws IOException {
 		return saveBytes(service, Base64.getDecoder().decode( base64 ) );
+	}
+	
+	/**
+	 * <p>generate a new ID in the format of ${yyyyMMddHHmmss}_${UUID}</p>
+	 * 
+	 * @return a new ID
+	 */
+	public static String generateId() {
+		SimpleDateFormat sdf = new SimpleDateFormat( "yyyyMMddHHmmss" );
+		return sdf.format( new Date() )+"_"+UUID.randomUUID().toString();
 	}
 	
 }

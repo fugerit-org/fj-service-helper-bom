@@ -3,11 +3,11 @@ package org.fugerit.java.dsb.jvfs;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.UUID;
 
 import org.fugerit.java.core.io.StreamIO;
 import org.fugerit.java.core.jvfs.JFile;
 import org.fugerit.java.dsb.DataService;
+import org.fugerit.java.dsb.DataServiceIO;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -56,7 +56,7 @@ public class JVFSDataService implements DataService {
 
 	@Override
 	public String save(InputStream data) throws IOException {
-		String id = UUID.randomUUID().toString();
+		String id = DataServiceIO.generateId();
 		JFile file = this.toFile(id);
 		try ( OutputStream fos = file.getOutputStream() ) {
 			StreamIO.pipeStream( data , fos, StreamIO.MODE_CLOSE_BOTH );

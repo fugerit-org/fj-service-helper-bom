@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.UUID;
 
 import org.fugerit.java.core.io.StreamIO;
 import org.fugerit.java.dsb.DataService;
+import org.fugerit.java.dsb.DataServiceIO;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -57,7 +57,7 @@ public class FileDataServiceUUID implements DataService {
 
 	@Override
 	public String save(InputStream data) throws IOException {
-		String id = UUID.randomUUID().toString();
+		String id = DataServiceIO.generateId();
 		File file = this.toFile(id);
 		try ( FileOutputStream fos = new FileOutputStream(file) ) {
 			StreamIO.pipeStream( data , fos, StreamIO.MODE_CLOSE_BOTH );
