@@ -11,7 +11,7 @@
 		<relativePath></relativePath>
 	</parent>
 
-	<version>0.2.1</version>
+	<version>0.2.2</version>
 	<packaging>pom</packaging>
 
 	<name>Fugerit Service Helper BOM</name>
@@ -28,6 +28,7 @@
 	    <microprofile-openapi-api-version>3.1.1</microprofile-openapi-api-version>
 	    <fj-service-helper-version>${project.version}</fj-service-helper-version>
 	    <emp-service-model-version>${fj-service-helper-version}</emp-service-model-version>
+	    <data-service-base-version>${fj-service-helper-version}</data-service-base-version>
 	</properties>
 
 	<licenses>
@@ -89,8 +90,8 @@
 
 	<modules>
 		<module>emp-service-model</module>
-		<module>fj-service-helper-demo</module>
 		<module>data-service-base</module>
+		<module>fj-service-helper-demo</module>
 	</modules>
 
 	<dependencyManagement>
@@ -117,8 +118,14 @@
 			
 			<dependency>
 				<groupId>org.fugerit.java</groupId>
-				<artifactId>fj-service-helper-test</artifactId>
-				<version>${fj-service-helper-version}}</version>
+				<artifactId>data-service-base</artifactId>
+				<version>${data-service-base-version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>fj-service-helper-demo</artifactId>
+				<version>${fj-service-helper-version}</version>
 			</dependency>
 			
 		</dependencies>
