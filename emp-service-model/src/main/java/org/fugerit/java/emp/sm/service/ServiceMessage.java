@@ -1,5 +1,6 @@
 package org.fugerit.java.emp.sm.service;
 
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -53,7 +54,7 @@ public class ServiceMessage {
 	 * @param code the message's code
 	 * @return this message's code
 	 */
-	@Schema( description = "Message identifier", example = "401001" )
+	@Schema( description = "Message identifier", example = "401001", required = false, type = SchemaType.STRING )
 	@Getter @Setter private String code;
 
 	/**
@@ -62,7 +63,7 @@ public class ServiceMessage {
 	 * @param severity the severity code
 	 * @return this message's severity
 	 */
-	@Schema(description = "Message severity, E = Error, W = Warning, I = Info, S = Success", example = "E")
+	@Schema(description = "Message severity, E = Error, W = Warning, I = Info, S = Success", example = "E" , required = false, type = SchemaType.STRING )
 	@Getter @Setter private String severity;
 
 	/**
@@ -71,7 +72,7 @@ public class ServiceMessage {
 	 * @param text the message's text
 	 * @return this message's text
 	 */
-	@Schema(description = "Message test", example = "User not authorized to access the resource.")
+	@Schema(description = "Message test", example = "User not authorized to access the resource." , required = false, type = SchemaType.STRING )
 	@Getter @Setter private String text;
 
 }

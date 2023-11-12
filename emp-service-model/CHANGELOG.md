@@ -9,4 +9,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added 
 
+- Generic Service Response Bean (with message list for errors, warnings, informations and success)
 - Generic Service Message Bean (with three properties : code, severity, text)
