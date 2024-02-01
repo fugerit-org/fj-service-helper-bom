@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- ServiceMap (basically a key/value map interface)
+
 ## [0.2.5 - 2023-11-12]
 
 ### Added
