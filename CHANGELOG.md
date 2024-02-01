@@ -13,6 +13,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- module quarkus-redis-service-map
+
+### Changed
+
+- minimum java build version : 17
+- quarkus version for demo app set to 3.7.1
+- fj-core version set to 8.4.7
+
+## [0.3.0 - 2024-02-01]
+
+### Added
+
+- ServiceMap
+
 ## [0.2.3 - 2023-11-12]
 
 ### Added

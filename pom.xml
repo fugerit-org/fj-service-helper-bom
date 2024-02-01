@@ -24,11 +24,13 @@
 	    <maven.compiler.source>${java-version-compliance}</maven.compiler.source>
 	    <maven.compiler.target>${java-version-compliance}</maven.compiler.target>	
 	    <maven.compiler.release>${java-version-compliance}</maven.compiler.release>
-	    <fj-version>8.4.5</fj-version>
+	    <fj-version>8.4.7</fj-version>
 	    <microprofile-openapi-api-version>3.1.1</microprofile-openapi-api-version>
 	    <fj-service-helper-version>${project.version}</fj-service-helper-version>
 	    <emp-service-model-version>${fj-service-helper-version}</emp-service-model-version>
 	    <data-service-base-version>${fj-service-helper-version}</data-service-base-version>
+	    <quarkus-redis-service-map-version>${fj-service-helper-version}</quarkus-redis-service-map-version>
+	    <quarkus.platform.version>3.7.1</quarkus.platform.version>
 	</properties>
 
 	<licenses>
@@ -92,6 +94,7 @@
 		<module>emp-service-model</module>
 		<module>data-service-base</module>
 		<module>data-service-jvfs</module>
+		<module>quarkus-redis-service-map</module>
 		<module>fj-service-helper-demo</module>
 	</modules>
 
@@ -127,6 +130,13 @@
 				<groupId>org.fugerit.java</groupId>
 				<artifactId>data-service-base</artifactId>
 				<version>${data-service-base-version}</version>
+			</dependency>
+			
+
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>quarkus-redis-service-map</artifactId>
+				<version>${quarkus-redis-service-map-version}</version>
 			</dependency>
 			
 			<dependency>
