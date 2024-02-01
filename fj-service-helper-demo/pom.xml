@@ -68,6 +68,11 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-config-yaml</artifactId>
+		</dependency>
+		
+		<dependency>
 		    <groupId>org.mvnpm</groupId>
 		    <artifactId>es-module-shims</artifactId>
 		    <version>1.8.1</version>
@@ -77,6 +82,11 @@
 			<groupId>org.fugerit.java</groupId>
 			<artifactId>emp-service-model</artifactId>
 		</dependency>
+			
+		<dependency>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>quarkus-redis-service-map</artifactId>
+		</dependency>		
 			
 		<dependency>
 			<groupId>io.quarkus</groupId>
