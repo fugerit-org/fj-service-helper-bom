@@ -28,6 +28,10 @@ public class ServiceMapRedisRest {
 		this.serviceMap = serviceMap;
 	}
 	
+	/*
+	 * http://localhost:8080/service/redis/set/myKey/myValue
+	 */
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@APIResponse(responseCode = "200", description = "Operation OK!", 
@@ -41,6 +45,10 @@ public class ServiceMapRedisRest {
 		sr.setSuccess(Arrays.asList(new ServiceMessage("200002", ServiceMessage.SEVERITY_SUCCESS, String.format( "Set OK key : %s, value : %s" , key, value ) )));
 		return Response.ok().entity(sr).build();
 	}
+	
+	/*
+	 * http://localhost:8080/service/redis/get/myKey
+	 */
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
