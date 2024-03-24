@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- quarkus version for demo app set to 3.8.3
+- quarkus version for demo app set to 3.7.2
 - fj-core version set to 8.5.3
 
 ## [0.3.1 - 2024-02-01]

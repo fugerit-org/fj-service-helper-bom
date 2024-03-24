@@ -30,7 +30,7 @@
 	    <emp-service-model-version>${fj-service-helper-version}</emp-service-model-version>
 	    <data-service-base-version>${fj-service-helper-version}</data-service-base-version>
 	    <quarkus-redis-service-map-version>${fj-service-helper-version}</quarkus-redis-service-map-version>
-	    <quarkus.platform.version>3.8.3</quarkus.platform.version>
+	    <quarkus.platform.version>3.7.2</quarkus.platform.version>
 	</properties>
 
 	<licenses>
