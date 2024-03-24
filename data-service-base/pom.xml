@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-service-helper-bom</artifactId>
-		<version>0.3.1</version>
+		<version>0.3.2-SNAPSHOT</version>
 	</parent>
 
 	<name>Data Service Base</name>
@@ -39,6 +39,5 @@
 	</organization>
 	
 	<url>https://www.fugerit.org/perm/venus/</url>
-	
-	
+
 </project>
