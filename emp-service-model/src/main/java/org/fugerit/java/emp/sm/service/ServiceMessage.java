@@ -47,7 +47,16 @@ public class ServiceMessage {
 	 * Constant for severity ERROR (E)
 	 */
 	public static final String SEVERITY_ERROR = "E";
-	
+
+	public enum Severity {
+		SUCCESS( SEVERITY_SUCCESS ),
+		INFO( SEVERITY_INFO ),
+		WARNING( SEVERITY_WARNING ),
+		ERROR( SEVERITY_ERROR );
+		@Getter private String level;
+		private Severity( String level ) { this.level = level; }
+	}
+
 	/**
 	 * The code of the message
 	 * 

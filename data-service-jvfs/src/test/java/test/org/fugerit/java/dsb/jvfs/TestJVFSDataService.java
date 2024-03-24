@@ -11,13 +11,13 @@ import org.fugerit.java.core.jvfs.JFile;
 import org.fugerit.java.core.jvfs.file.RealJMount;
 import org.fugerit.java.dsb.DataServiceIO;
 import org.fugerit.java.dsb.jvfs.JVFSDataService;
-import org.junit.Assert;
-import org.junit.Test;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class TestJVFSDataService {
+class TestJVFSDataService {
 
 	private static final JFile STORE_FOLDER = SafeFunction.get( () -> RealJMount.createJVFS( new File( "target" ) ).getRoot() );
 	
@@ -30,26 +30,26 @@ public class TestJVFSDataService {
 	}
 	
 	@Test
-	public void testFileDataService() throws IOException {
+	void testFileDataService() throws IOException {
 		JVFSDataService service = new JVFSDataService();
 		service.setStoreJFolder(STORE_FOLDER);
 		log.info( "data service : {}", service );
 		try ( InputStream data = this.newData() ) {
 			String id = DataServiceIO.saveBase64( service , TEST_DATA_BASE64 );
 			String base64 = DataServiceIO.loadBase64( service , id );
-			Assert.assertEquals( TEST_DATA_BASE64 , base64 );
+			Assertions.assertEquals( TEST_DATA_BASE64 , base64 );
 		}
 	}
 
 	
 	@Test
-	public void testCreate() throws IOException {
-		Assert.assertThrows( NullPointerException.class , () -> new JVFSDataService( null ) );
+	void testCreate() throws IOException {
+		Assertions.assertThrows( NullPointerException.class , () -> new JVFSDataService( null ) );
 		JVFSDataService service = new JVFSDataService( STORE_FOLDER );
-		Assert.assertThrows( NullPointerException.class , () -> service.setStoreJFolder( null ) );
+		Assertions.assertThrows( NullPointerException.class , () -> service.setStoreJFolder( null ) );
 		log.info( "service : {}", service );
-		Assert.assertEquals( STORE_FOLDER , service.getStoreJFolder() );
-		Assert.assertNull( DataServiceIO.loadBase64( service, "not-exists" ) );
+		Assertions.assertEquals( STORE_FOLDER , service.getStoreJFolder() );
+		Assertions.assertNull( DataServiceIO.loadBase64( service, "not-exists" ) );
 	}
 	
 }

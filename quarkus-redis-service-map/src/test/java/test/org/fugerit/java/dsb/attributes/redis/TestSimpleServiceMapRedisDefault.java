@@ -1,18 +1,18 @@
 package test.org.fugerit.java.dsb.attributes.redis;
 
 import org.fugerit.java.dsb.attributes.redis.SimpleServiceMapRedisDefault;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class TestSimpleServiceMapRedisDefault {
+class TestSimpleServiceMapRedisDefault {
 
 	@Test
-	public void testSimpleServiceMapRedisDefault() {
+	void testSimpleServiceMapRedisDefault() {
 		SimpleServiceMapRedisDefault serviceMap = new SimpleServiceMapRedisDefault();
-		Assert.assertNotNull( serviceMap );
+		Assertions.assertNotNull( serviceMap );
 		serviceMap.remove( "a" );
-		Assert.assertThrows( Exception.class , () -> serviceMap.set("b", "c"));
-		Assert.assertThrows( Exception.class , () -> serviceMap.get("d"));
+		Assertions.assertThrows( Exception.class , () -> serviceMap.set("b", "c"));
+		Assertions.assertThrows( Exception.class , () -> serviceMap.get("d"));
 	}
 	
 }

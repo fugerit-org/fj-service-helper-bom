@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-bom</artifactId>
-		<version>1.6.2</version>
+		<version>1.6.3</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -170,8 +170,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
 		

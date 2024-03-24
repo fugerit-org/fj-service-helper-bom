@@ -10,13 +10,13 @@ import org.fugerit.java.core.function.SafeFunction;
 import org.fugerit.java.dsb.DataServiceIO;
 import org.fugerit.java.dsb.DataServiceWrapper;
 import org.fugerit.java.dsb.file.FileDataServiceUUID;
-import org.junit.Assert;
-import org.junit.Test;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class TestFileDataServiceUUID {
+class TestFileDataServiceUUID {
 
 	private static final File STORE_FOLDER = new File( "target" );
 	
@@ -29,7 +29,7 @@ public class TestFileDataServiceUUID {
 	}
 	
 	@Test
-	public void testFileDataService() throws IOException {
+	void testFileDataService() throws IOException {
 		FileDataServiceUUID service = new FileDataServiceUUID();
 		service.setStoreFolder(STORE_FOLDER);
 		DataServiceWrapper wrapper = new DataServiceWrapper( service );
@@ -37,27 +37,27 @@ public class TestFileDataServiceUUID {
 		try ( InputStream data = this.newData() ) {
 			String id = DataServiceIO.saveBase64( wrapper , TEST_DATA_BASE64 );
 			String base64 = DataServiceIO.loadBase64( wrapper , id );
-			Assert.assertEquals( TEST_DATA_BASE64 , base64 );
+			Assertions.assertEquals( TEST_DATA_BASE64 , base64 );
 		}
 		try ( InputStream data = this.newData() ) {
 			String id = DataServiceIO.saveBase64( wrapper , TEST_DATA_BASE64, "res_name.txt" );
 			String base64 = DataServiceIO.loadBase64( wrapper , id );
-			Assert.assertEquals( TEST_DATA_BASE64 , base64 );
+			Assertions.assertEquals( TEST_DATA_BASE64 , base64 );
 		}
 		wrapper.wrap( service );
-		Assert.assertThrows( NullPointerException.class , () -> new DataServiceWrapper( null ) );
+		Assertions.assertThrows( NullPointerException.class , () -> new DataServiceWrapper( null ) );
 	}
 
 	
 	@Test
-	public void testCreate() throws IOException {
-		Assert.assertThrows( NullPointerException.class , () -> new FileDataServiceUUID( null ) );
+	void testCreate() throws IOException {
+		Assertions.assertThrows( NullPointerException.class , () -> new FileDataServiceUUID( null ) );
 		FileDataServiceUUID service = new FileDataServiceUUID( STORE_FOLDER );
-		Assert.assertThrows( NullPointerException.class , () -> service.setStoreFolder( null ) );
+		Assertions.assertThrows( NullPointerException.class , () -> service.setStoreFolder( null ) );
 		log.info( "service : {}", service );
-		Assert.assertEquals( STORE_FOLDER , service.getStoreFolder() );
-		Assert.assertNull( DataServiceIO.loadBase64( service, "not-exists" ) );
-		Assert.assertNotNull( new DataServiceWrapper() );
+		Assertions.assertEquals( STORE_FOLDER , service.getStoreFolder() );
+		Assertions.assertNull( DataServiceIO.loadBase64( service, "not-exists" ) );
+		Assertions.assertNotNull( new DataServiceWrapper() );
 	}
 	
 }

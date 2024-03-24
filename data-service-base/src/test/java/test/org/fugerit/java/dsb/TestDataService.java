@@ -2,17 +2,18 @@ package test.org.fugerit.java.dsb;
 
 import org.fugerit.java.dsb.DataService;
 import org.fugerit.java.dsb.DataServiceIO;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class TestDataService {
+
+class TestDataService {
 
     @Test
-    public void testBase() throws IOException {
+    void testBase() throws IOException {
         String testId = DataServiceIO.generateId();
         DataService ds = new DataService() {
             @Override
@@ -25,7 +26,7 @@ public class TestDataService {
             }
 
         };
-        Assert.assertEquals( testId, ds.save( null, null ) );
+        Assertions.assertEquals( testId, ds.save( null, null ) );
     }
 
 }
