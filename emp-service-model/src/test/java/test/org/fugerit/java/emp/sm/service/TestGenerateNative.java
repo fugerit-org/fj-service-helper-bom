@@ -6,6 +6,7 @@ import org.fugerit.java.emp.sm.service.ServiceResponse;
 import org.fugerit.java.nhg.GenerateReflectConfig;
 import org.fugerit.java.nhg.ReflectConfigUtil;
 import org.fugerit.java.nhg.reflect.config.Entry;
+import org.fugerit.java.nhg.reflect.config.EntryHelper;
 import org.fugerit.java.nhg.reflect.config.EntryMethod;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,12 +20,6 @@ import java.util.List;
 @Slf4j
 class TestGenerateNative {
 
-    private Entry addInit( Entry entry ) {
-        EntryMethod initMethod = new EntryMethod( "<init>" );
-        entry.getMethods().add( initMethod );
-        return entry;
-    }
-
     @Test
     void generateNative() throws IOException {
         String basePath = "src/main/resources/META-INF/native-image";
@@ -35,8 +30,8 @@ class TestGenerateNative {
         log.info( "{} path : {}", reflectConfig.getName(), reflectConfig.getCanonicalPath() );
         ReflectConfigUtil util = ReflectConfigUtil.ALL_METHODS;
         List<Entry> entries = Arrays.asList(
-                this.addInit( util.toEntry( ServiceMessage.class ) ),
-                this.addInit( util.toEntry( ServiceResponse.class ) )
+                EntryHelper.fixedOrder( EntryHelper.addDefaultInit( util.toEntry( ServiceMessage.class ) ) ),
+                EntryHelper.fixedOrder( EntryHelper.addDefaultInit( util.toEntry( ServiceResponse.class ) ) )
         );
         try (FileWriter writer = new FileWriter( reflectConfig )){
             GenerateReflectConfig config = new GenerateReflectConfig();
