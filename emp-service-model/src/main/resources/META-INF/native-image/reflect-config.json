@@ -1,0 +1,109 @@
+[ {
+  "name" : "org.fugerit.java.emp.sm.service.ServiceMessage",
+  "methods" : [ {
+    "name" : "toString",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "getSeverity",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "getText",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "setText",
+    "parameterTypes" : [ "java.lang.String" ]
+  }, {
+    "name" : "getCode",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "setCode",
+    "parameterTypes" : [ "java.lang.String" ]
+  }, {
+    "name" : "setSeverity",
+    "parameterTypes" : [ "java.lang.String" ]
+  }, {
+    "name" : "wait",
+    "parameterTypes" : [ "long", "int" ]
+  }, {
+    "name" : "wait",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "wait",
+    "parameterTypes" : [ "long" ]
+  }, {
+    "name" : "equals",
+    "parameterTypes" : [ "java.lang.Object" ]
+  }, {
+    "name" : "hashCode",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "getClass",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "notify",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "notifyAll",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "<init>",
+    "parameterTypes" : [ ]
+  } ]
+}, {
+  "name" : "org.fugerit.java.emp.sm.service.ServiceResponse",
+  "methods" : [ {
+    "name" : "getErrors",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "getInfos",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "getSuccess",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "setErrors",
+    "parameterTypes" : [ "java.util.List" ]
+  }, {
+    "name" : "setInfos",
+    "parameterTypes" : [ "java.util.List" ]
+  }, {
+    "name" : "setSuccess",
+    "parameterTypes" : [ "java.util.List" ]
+  }, {
+    "name" : "getWarnings",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "setWarnings",
+    "parameterTypes" : [ "java.util.List" ]
+  }, {
+    "name" : "wait",
+    "parameterTypes" : [ "long", "int" ]
+  }, {
+    "name" : "wait",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "wait",
+    "parameterTypes" : [ "long" ]
+  }, {
+    "name" : "equals",
+    "parameterTypes" : [ "java.lang.Object" ]
+  }, {
+    "name" : "toString",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "hashCode",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "getClass",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "notify",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "notifyAll",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "<init>",
+    "parameterTypes" : [ ]
+  } ]
+} ]

@@ -38,6 +38,12 @@
 		    <scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.fugerit.java</groupId>
+			<artifactId>native-helper-graalvm</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<organization>

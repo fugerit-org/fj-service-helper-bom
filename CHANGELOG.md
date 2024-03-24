@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- [emp-service-model] native support : relfect-config.json
+
 ## [0.3.2 - 2024-03-24]
 
 ### Added
