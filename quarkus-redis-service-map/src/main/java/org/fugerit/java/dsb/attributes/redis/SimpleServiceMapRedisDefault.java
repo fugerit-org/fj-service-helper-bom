@@ -13,10 +13,10 @@ public class SimpleServiceMapRedisDefault implements SimpleServiceMap {
 
 	@ConfigProperty( name = "cache.ttl-ms", defaultValue = "600000" ) // 10 minutes
 	private long ttl;
-	
+
 	@Inject
 	private RedisDataSource ds;
-	
+
 	public SimpleServiceMapRedisDefault() {
 		log.debug( "SimpleServiceMapRedisDefault created!" );
 	}

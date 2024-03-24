@@ -9,7 +9,7 @@ public class ServiceMapDefault<K, V> implements ServiceMap<K, V> {
 
     private Map<K, V> map;
     public ServiceMapDefault() {
-        this.map = new HashMap<K, V>();
+        this.map = new HashMap<>();
     }
 
     @Override
