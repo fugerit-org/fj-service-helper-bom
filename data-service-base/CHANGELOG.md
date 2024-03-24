@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- method save(InputStream,String) to DataService
+
 ## [0.3.0 - 2024-02-01]
 
 ### Added

@@ -51,7 +51,25 @@ public class DataServiceIO {
 		}
 		return base64;
 	}
-	
+
+
+	/**
+	 * <p>Save a resource as base64 encoded string.</p>
+	 *
+	 * @param service		the data service
+	 * @param data			the resource to save
+	 * @param resourceName	the resource name to be saved
+	 * @return				the ID of the saved resource
+	 * @throws IOException	if any I/O issue arises
+	 */
+	public static String saveBytes( DataService service, byte[] data, String resourceName ) throws IOException {
+		String id = null;
+		try ( InputStream is = new ByteArrayInputStream( data ) ) {
+			id = service.save(is, resourceName);
+		}
+		return id;
+	}
+
 	/**
 	 * <p>Save a resource as base64 encoded string.</p>
 	 * 
@@ -78,6 +96,19 @@ public class DataServiceIO {
 	 */
 	public static String saveBase64( DataService service, String base64 ) throws IOException {
 		return saveBytes(service, Base64.getDecoder().decode( base64 ) );
+	}
+
+	/**
+	 * <p>Save a resource as base64 encoded string.</p>
+	 *
+	 * @param service		the data service
+	 * @param base64		the resource to save as base64 encoded string
+	 * @param resourceName	the resource name to be saved
+	 * @return				the ID of the saved resource
+	 * @throws IOException	if any I/O issue arises
+	 */
+	public static String saveBase64( DataService service, String base64, String resourceName ) throws IOException {
+		return saveBytes(service, Base64.getDecoder().decode( base64 ), resourceName);
 	}
 	
 	/**

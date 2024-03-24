@@ -39,6 +39,11 @@ public class TestFileDataServiceUUID {
 			String base64 = DataServiceIO.loadBase64( wrapper , id );
 			Assert.assertEquals( TEST_DATA_BASE64 , base64 );
 		}
+		try ( InputStream data = this.newData() ) {
+			String id = DataServiceIO.saveBase64( wrapper , TEST_DATA_BASE64, "res_name.txt" );
+			String base64 = DataServiceIO.loadBase64( wrapper , id );
+			Assert.assertEquals( TEST_DATA_BASE64 , base64 );
+		}
 		wrapper.wrap( service );
 		Assert.assertThrows( NullPointerException.class , () -> new DataServiceWrapper( null ) );
 	}

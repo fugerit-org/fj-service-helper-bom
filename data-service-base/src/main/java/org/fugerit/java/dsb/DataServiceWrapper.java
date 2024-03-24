@@ -46,4 +46,9 @@ public class DataServiceWrapper implements DataService {
 		return this.unwrap().save(data);
 	}
 
+	@Override
+	public String save(InputStream data, String resourceName) throws IOException {
+		return this.unwrap().save(data, resourceName);
+	}
+
 }

@@ -57,13 +57,17 @@ public class FileDataServiceUUID implements DataService {
 
 	@Override
 	public String save(InputStream data) throws IOException {
-		String id = DataServiceIO.generateId();
-		File file = this.toFile(id);
+		return this.save( data, null );
+	}
+
+	@Override
+	public String save(InputStream data, String resourceName) throws IOException {
+		String id = resourceName == null ? DataServiceIO.generateId() : DataServiceIO.generateId()+"_"+resourceName ;
+		File file = this.toFile( id );
 		try ( FileOutputStream fos = new FileOutputStream(file) ) {
 			StreamIO.pipeStream( data , fos, StreamIO.MODE_CLOSE_BOTH );
 		}
 		log.info( "save - file:{} -> id:{}", file.getCanonicalPath(), id );
 		return id;
 	}
-	
 }
