@@ -1,0 +1,7 @@
+# native-helper-graalvm generation configuration
+---
+createParentDirectory: true
+generate:
+  - packageName: org.fugerit.java.emp.sm.service
+    excludeClassNames: ServiceResponseHelper
+    mode: getters

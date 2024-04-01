@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0 - 2024-04-01]
+
+### Added
+
+- [emp-service-model] native support : relfect-config.json (by native-helper-maven-plugin)
+
+### Changed
+
+- fj-bom version set to 1.6.4
+
 ## [0.3.3 - 2024-03-24]
 
 ### Added
