@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- native-helper-maven-plugin 1.3.5
+
 ## [1.0.0 - 2024-04-01]
 
 ### Added

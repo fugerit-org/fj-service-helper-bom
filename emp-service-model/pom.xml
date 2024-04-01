@@ -33,15 +33,15 @@
 						<id>generate-native-configuration</id>
 						<phase>prepare-package</phase>
 						<goals>
-							<goal>nativeHelper</goal>
+							<goal>generate</goal>
 						</goals>
+						<configuration>
+							<nativeHelperConfigPath>src/main/config/native-helper-config.yaml</nativeHelperConfigPath>
+							<reflectConfigJsonOutputPath>${project.build.outputDirectory}/META-INF/native-image/reflect-config.json</reflectConfigJsonOutputPath>
+							<warnOnError>true</warnOnError>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<nativeHelperConfigPath>src/main/config/native-helper-config.yaml</nativeHelperConfigPath>
-					<reflectConfigJsonOutputPath>${project.build.outputDirectory}/META-INF/native-image/reflect-config.json</reflectConfigJsonOutputPath>
-					<warnOnError>true</warnOnError>
-				</configuration>
 			</plugin>
 
 		</plugins>
