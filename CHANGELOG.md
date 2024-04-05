@@ -54,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test moved from junit4 to junit5
 - quarkus version for demo app set to 3.8.3
 - fj-core version set to 8.5.3
+- minimum java version needed to build is now 17
 
 ## [0.3.1 - 2024-02-01]
 
