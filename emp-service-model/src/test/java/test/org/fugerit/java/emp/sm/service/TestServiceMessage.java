@@ -3,6 +3,7 @@ package test.org.fugerit.java.emp.sm.service;
 import org.fugerit.java.emp.sm.service.ServiceMessage;
 
 import lombok.extern.slf4j.Slf4j;
+import org.fugerit.java.emp.sm.service.ServiceResponseHelper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +25,15 @@ class TestServiceMessage {
 		Assertions.assertEquals( TEST_MESSAGE , message.getText() );
 		Assertions.assertEquals( ServiceMessage.SEVERITY_ERROR , message.getSeverity() );
 	}
-	
+
+	@Test
+	void testNewMessage() {
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultErrorMessage( TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultWarningMessage( TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultSuccessMessage( TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultInfoMessage( TEST_MESSAGE ).getText() );
+	}
+
 	@Test
 	void testMessageNoArgs() {
 		ServiceMessage message = new ServiceMessage();

@@ -1,5 +1,6 @@
 package org.fugerit.java.emp.sm.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -23,5 +24,14 @@ public class ServiceResponse {
 	
 	@Schema(description = "Success messages list", example = "[{\"code\":\"200001\",\"severity\":\"S\",\"text\":\"sample success\"}]" , required = false )
 	@Getter @Setter private List<ServiceMessage> success;
-	
+
+	public ServiceResponse addAllBySeverity(ServiceMessage... messages) {
+		return this.addAllBySeverity( Arrays.asList( messages ) );
+	}
+
+	public ServiceResponse addAllBySeverity(List<ServiceMessage> messages) {
+		ServiceResponseHelper.addAllBySeverity( this, messages );
+		return this;
+	}
+
 }
