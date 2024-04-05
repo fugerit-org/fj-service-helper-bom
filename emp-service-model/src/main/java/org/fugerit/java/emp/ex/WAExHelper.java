@@ -14,27 +14,27 @@ public class WAExHelper {
         return newEx( Response.Status.INTERNAL_SERVER_ERROR, message  );
     }
 
-    public static WebApplicationException newEx( Response.Status status, String message ) {
+    public static WebApplicationException newEx( Response.StatusType status, String message ) {
         return newEx(  null, status, message );
     }
 
-    public static WebApplicationException newEx( Throwable cause, Response.Status status, String message ) {
+    public static WebApplicationException newEx( Throwable cause, Response.StatusType status, String message ) {
         return newEx( cause, status, ServiceResponseHelper.newMessageByStatus( status, message ) );
     }
 
-    public static WebApplicationException newEx( Response.Status status, ServiceMessage sm ) {
+    public static WebApplicationException newEx( Response.StatusType status, ServiceMessage sm ) {
         return newEx( null, status, sm );
     }
 
-    public static WebApplicationException newEx( Throwable cause, Response.Status status, ServiceMessage sm ) {
+    public static WebApplicationException newEx( Throwable cause, Response.StatusType status, ServiceMessage sm ) {
         return newEx( cause, status, new ServiceResponse().addAllBySeverity( sm ) );
     }
 
-    public static WebApplicationException newEx( Response.Status status, ServiceResponse sr ) {
+    public static WebApplicationException newEx( Response.StatusType status, ServiceResponse sr ) {
         return newEx( null, status, sr );
     }
 
-    public static WebApplicationException newEx( Throwable cause, Response.Status status, ServiceResponse sr ) {
+    public static WebApplicationException newEx( Throwable cause, Response.StatusType status, ServiceResponse sr ) {
         return new WebApplicationException( cause , Response.status( status ).entity( sr ).build()  );
     }
 

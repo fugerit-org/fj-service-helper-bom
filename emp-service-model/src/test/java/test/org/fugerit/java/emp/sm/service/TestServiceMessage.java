@@ -1,5 +1,6 @@
 package test.org.fugerit.java.emp.sm.service;
 
+import jakarta.ws.rs.core.Response;
 import org.fugerit.java.emp.sm.service.ServiceMessage;
 
 import lombok.extern.slf4j.Slf4j;
@@ -28,10 +29,11 @@ class TestServiceMessage {
 
 	@Test
 	void testNewMessage() {
-		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultErrorMessage( TEST_MESSAGE ).getText() );
-		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultWarningMessage( TEST_MESSAGE ).getText() );
-		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultSuccessMessage( TEST_MESSAGE ).getText() );
-		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newDefaultInfoMessage( TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newMessageByStatus( Response.Status.OK, TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newMessageByStatus( Response.Status.INTERNAL_SERVER_ERROR, TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newMessageByStatus( Response.Status.BAD_REQUEST, TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newMessageByStatus( new TestStatus( 100, "Test Info" ), TEST_MESSAGE ).getText() );
+		Assertions.assertEquals( TEST_MESSAGE, ServiceResponseHelper.newMessageByStatus( new TestStatus( 800, "Test Warning" ), TEST_MESSAGE ).getText() );
 	}
 
 	@Test
@@ -45,4 +47,36 @@ class TestServiceMessage {
 		Assertions.assertEquals( ServiceMessage.SEVERITY_WARNING , message.getSeverity() );
 	}
 	
+}
+
+class TestStatus implements Response.StatusType {
+
+	private int statusCode;
+
+	private String reasonPhrase;
+
+	public TestStatus(int statusCode, String reasonPhrase) {
+		this.statusCode = statusCode;
+		this.reasonPhrase = reasonPhrase;
+	}
+
+	@Override
+	public Response.Status toEnum() {
+		return Response.StatusType.super.toEnum();
+	}
+
+	@Override
+	public int getStatusCode() {
+		return this.statusCode;
+	}
+
+	@Override
+	public Response.Status.Family getFamily() {
+		return Response.Status.Family.familyOf( this.getStatusCode() );
+	}
+
+	@Override
+	public String getReasonPhrase() {
+		return this.reasonPhrase;
+	}
 }

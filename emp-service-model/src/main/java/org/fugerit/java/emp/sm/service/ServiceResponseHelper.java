@@ -36,7 +36,7 @@ public class ServiceResponseHelper {
         return messages.stream().filter( m -> m.getSeverity().equalsIgnoreCase( severity ) ).collect( Collectors.toList() );
     }
 
-    public static ServiceMessage newMessageByStatus(Response.Status status, String message ) {
+    public static ServiceMessage newMessageByStatus(Response.StatusType status, String message ) {
         switch ( status.getFamily() ) {
             case INFORMATIONAL:
                 return newDefaultInfoMessage( message );
@@ -66,7 +66,7 @@ public class ServiceResponseHelper {
     }
 
     public static ServiceMessage newDefaultInfoMessage( String message ) {
-        return newSuccessMessage( ServiceMessage.SEVERITY_INFO, message );
+        return newInfoMessage( ServiceMessage.SEVERITY_INFO, message );
     }
 
     public static ServiceMessage newErrorMessage( String code, String message ) {
