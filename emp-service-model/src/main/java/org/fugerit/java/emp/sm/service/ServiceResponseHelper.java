@@ -13,7 +13,7 @@ public class ServiceResponseHelper {
     private static List<ServiceMessage> addHelper( List<ServiceMessage> currentMessages, List<ServiceMessage> messages ) {
         List<ServiceMessage> result = currentMessages == null ? new ArrayList<>() : currentMessages;
         result.addAll( messages );
-        return result;
+        return result.isEmpty() ? null : result;
     }
 
     public static void addErrors(ServiceResponse response, List<ServiceMessage> messages) {

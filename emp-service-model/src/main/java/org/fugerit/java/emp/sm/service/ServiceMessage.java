@@ -84,4 +84,12 @@ public class ServiceMessage {
 	@Schema(description = "Message test", example = "User not authorized to access the resource." , required = false, type = SchemaType.STRING )
 	@Getter @Setter private String text;
 
+	public static ServiceMessage newMessage( Severity severity, String message ) {
+		return newMessage( severity.getLevel(), severity, message );
+	}
+
+	public static ServiceMessage newMessage( String code, Severity severity, String message ) {
+		return ServiceResponseHelper.newMessage( code, severity.getLevel(), message );
+	}
+
 }

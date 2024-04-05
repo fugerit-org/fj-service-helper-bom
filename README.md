@@ -19,6 +19,10 @@ This project is a wrapper for some service components abstraction modules :
 
 Collections of model for services.
 
+## [emp-exception-mapper](emp-exception-mapper/README.md)
+
+Collection of MicroProfile ExceptionMappers.
+
 ## [data-service-base](data-service-base/README.md)
 
 Simple data resources load/save interface layer.

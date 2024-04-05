@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0 - 2024-04-05]
+
 ### Added
 
+- WAExHelper to build WebApplicationException
 - [emp-service-model] native support : relfect-config.json
 
 ## [0.1.0 - 2023-11-12]

@@ -8,14 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Refer to subproject's changelog for details : 
 
 - [emp-service-model](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/emp-service-model/CHANGELOG.md)
+- [emp-exception-mapper](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/emp-exception-mapper/CHANGELOG.md)
 - [data-service-base](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-base/CHANGELOG.md)
 - [data-service-jvfs](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-jvfs/CHANGELOG.md)
 
 ## [Unreleased]
 
+## [1.1.0 - 2024-04-05]
+
 ### Added
 
 - WAExHelper to build WebApplicationException
+- module emp-exception-mapper [incubator]
 
 ### Changed
 
