@@ -1,20 +1,32 @@
 package org.fugerit.java.simple.config.microprofile;
 
+import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
-import org.fugerit.java.simple.config.ConfigParams;
+import org.fugerit.java.simple.config.AbstractConfigParams;
 
 import java.util.Optional;
 
-public class ConfigParamsMicroprofile implements ConfigParams {
+public class ConfigParamsMicroprofile extends AbstractConfigParams {
 
+    public ConfigParamsMicroprofile() {
+        this(DEFAULT_NAMESPACE, ConfigProvider.getConfig());
+    }
+
+    public ConfigParamsMicroprofile(String namespace, Config config) {
+        super(namespace);
+        this.config = config;
+    }
+
+    private Config config;
 
     @Override
-    public String getValue(String name) {
-        return ConfigProvider.getConfig().getValue( name, String.class );
+    protected Optional<String> getOptionalValueNamespace(String name) {
+        return this.config.getOptionalValue( name, String.class );
     }
 
     @Override
-    public Optional<String> getOptionalValue(String name) {
-        return ConfigProvider.getConfig().getOptionalValue( name, String.class );
+    protected String getValueNamespace(String name) {
+        return this.config.getValue( name, String.class );
     }
+
 }
