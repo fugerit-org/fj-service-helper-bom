@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-service-helper-bom</artifactId>
-		<version>1.1.0</version>
+		<version>${revision}</version>
 	</parent>
 
 	<name>simple-config-microprofile</name>
