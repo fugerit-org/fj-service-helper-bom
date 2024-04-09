@@ -15,9 +15,13 @@ Helper project for service components abstraction
 
 This project is a wrapper for some service components abstraction modules : 
 
-## [emp-service-model](emp-service-model/README.md)
+## [simple-config](simple-config/README.md)
 
-Collections of model for services.
+Simple configuration API for services.
+
+## [simple-config-microprofile](simple-config-microprofile/README.md)
+
+Simple configuration API implementation based on MicroProfile config API.
 
 ## [emp-exception-mapper](emp-exception-mapper/README.md)
 
