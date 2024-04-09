@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>data-service-base</artifactId>
+	<artifactId>simple-config-microprofile</artifactId>
 
 	<parent>
 		<groupId>org.fugerit.java</groupId>
@@ -10,8 +10,8 @@
 		<version>1.1.0</version>
 	</parent>
 
-	<name>Data Service Base</name>
-	<description>Simple data resources load/save interface layer.</description>
+	<name>simple-config-microprofile</name>
+	<description>Microprofile base implementation of Simple Config API.</description>
 
 	<licenses>
 		<license>
@@ -25,12 +25,6 @@
 	</build>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>org.fugerit.java</groupId>
-			<artifactId>fj-core</artifactId>
-		</dependency>
-
 	</dependencies>
 
 	<organization>
@@ -38,6 +32,6 @@
 		<name>Fugerit</name>
 	</organization>
 	
-	<url>https://www.fugerit.org/perm/venus/</url>
+	<url>https://www.fugerit.org/</url>
 
 </project>
