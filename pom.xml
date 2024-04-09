@@ -29,8 +29,11 @@
 		<native-helper-graalvm-version>1.1.1</native-helper-graalvm-version>
 		<jakarta-ws-rs-api-version>3.1.0</jakarta-ws-rs-api-version>
 		<microprofile-openapi-api-version>3.1.1</microprofile-openapi-api-version>
+		<microprofile-config-api-version>3.1</microprofile-config-api-version>
 		<microprofile-rest-client-api-version>3.0.1</microprofile-rest-client-api-version>
 	    <fj-service-helper-version>${project.version}</fj-service-helper-version>
+		<simple-config-version>${fj-service-helper-version}</simple-config-version>
+		<simple-config-microprofile-version>${fj-service-helper-version}</simple-config-microprofile-version>
 	    <emp-service-model-version>${fj-service-helper-version}</emp-service-model-version>
 		<emp-exception-mapper-version>${fj-service-helper-version}</emp-exception-mapper-version>
 	    <data-service-base-version>${fj-service-helper-version}</data-service-base-version>
@@ -136,9 +139,27 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.eclipse.microprofile.config</groupId>
+				<artifactId>microprofile-config-api</artifactId>
+				<version>${microprofile-config-api-version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.eclipse.microprofile.rest.client</groupId>
 				<artifactId>microprofile-rest-client-api</artifactId>
 				<version>${microprofile-rest-client-api-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>simple-config</artifactId>
+				<version>${simple-config-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.fugerit.java</groupId>
+				<artifactId>simple-config-microprofile</artifactId>
+				<version>${simple-config-microprofile-version}</version>
 			</dependency>
 
 			<dependency>

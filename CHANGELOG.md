@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- simple-config ConfigParams
+- simple-config-microprofile ConfigParamsMicroprofile
+
 ## [1.1.0 - 2024-04-05]
 
 ### Added
