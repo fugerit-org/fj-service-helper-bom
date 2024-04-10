@@ -96,9 +96,9 @@ class TestConfigParamsMicroprofile {
         Assertions.assertFalse( valueX.isPresent() );
         // loose testing
         ConfigParams configLoose = new ConfigParamsMicroprofileLoose();
-        String value3 = config.getValue( "testconfig.param3" );
+        String value3 = configLoose.getValue( "testconfig.param3" );
         Assertions.assertEquals( "value3", value3 );
-        Assertions.assertNull( config.getValue( "notPresent" ) );
+        Assertions.assertNull( configLoose.getValue( "notPresent" ) );
     }
 
 }
