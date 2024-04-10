@@ -1,5 +1,6 @@
 package teat.org.fugerit.java.simple.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.fugerit.java.core.util.PropsIO;
 import org.fugerit.java.simple.config.*;
 import org.junit.jupiter.api.Assertions;
@@ -9,12 +10,13 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
 
+@Slf4j
 class TestConfigParamsDefault {
 
     @Test
     void testConfigParams() throws IOException {
         Properties configProperties = PropsIO.loadFromClassLoaderSafe( "testconfig.properties" );
-        ConfigParams config = ConfigParamsLogger.wrapLogDebug( new ConfigParamsDefault( configProperties ) );
+        ConfigParams config = new ConfigParamsDefault( configProperties ).withDebugLog();
         String value1 = config.getValue( "testconfig.param1" );
         Assertions.assertEquals( "value1", value1 );
         Optional<String> value2 = config.getOptionalValue( "testconfig.param2" );
@@ -22,7 +24,7 @@ class TestConfigParamsDefault {
         Optional<String> valueX = config.getOptionalValue( "testconfig.paramX" );
         Assertions.assertFalse( valueX.isPresent() );
         // test null namepsace
-        ConfigParams configAlt = new ConfigParamsDefault( null, configProperties );
+        ConfigParams configAlt = new ConfigParamsDefault( null, configProperties ).withInfoLog();
         String value3 = config.getValue( "testconfig.param3" );
         Assertions.assertEquals( "value3", value3 );
         // simple configuration
@@ -31,6 +33,11 @@ class TestConfigParamsDefault {
         Assertions.assertNotNull( simpleConfig );
         String typeKo = typeOk+"KO";
         Assertions.assertNull( SimpleConfigFacade.configure( typeKo, config ) );
+        // test with namespace
+        ConfigParams withNamespace = config.withNamespace( "testconfig." );
+        Assertions.assertEquals( "value1", withNamespace.getValue( "param1" ) );
+        Assertions.assertTrue( withNamespace.getOptionalValue( "param3" ).isPresent() );
+        log.info( "with namespace : {}", withNamespace );
     }
 
 }

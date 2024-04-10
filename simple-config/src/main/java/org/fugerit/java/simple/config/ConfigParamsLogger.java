@@ -12,6 +12,10 @@ public class ConfigParamsLogger extends ConfigParamsWrapper {
         return new ConfigParamsLogger( params );
     }
 
+    public static ConfigParams wrapLogInfo( ConfigParams params ) {
+        return new ConfigParamsLogger( params, ( n, v ) -> log.debug( "wraps : {}, name : {}, value : {} ", params, n, v ) );
+    }
+
     private BiConsumer<String, Object> logFun;
 
     public ConfigParamsLogger(final ConfigParams wrapped) {
