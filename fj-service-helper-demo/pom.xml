@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.fugerit.java</groupId>
     <artifactId>fj-service-helper-bom</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
   </parent>
   <artifactId>fj-service-helper-demo</artifactId>
   <name>Fugerit Service Helper DEMO</name>

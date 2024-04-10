@@ -10,6 +10,7 @@ import org.eclipse.microprofile.config.spi.Converter;
 import org.fugerit.java.simple.config.ConfigParams;
 import org.fugerit.java.simple.config.ConfigParamsDefault;
 import org.fugerit.java.simple.config.microprofile.ConfigParamsMicroprofile;
+import org.fugerit.java.simple.config.microprofile.ConfigParamsMicroprofileLoose;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -93,6 +94,11 @@ class TestConfigParamsMicroprofile {
         Assertions.assertEquals( "value2", value2.get() );
         Optional<String> valueX = config.getOptionalValue( "testconfig.paramX" );
         Assertions.assertFalse( valueX.isPresent() );
+        // loose testing
+        ConfigParams configLoose = new ConfigParamsMicroprofileLoose();
+        String value3 = config.getValue( "testconfig.param3" );
+        Assertions.assertEquals( "value3", value3 );
+        Assertions.assertNull( config.getValue( "notPresent" ) );
     }
 
 }
