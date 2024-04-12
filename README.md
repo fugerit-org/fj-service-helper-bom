@@ -23,6 +23,10 @@ Simple configuration API for services.
 
 Simple configuration API implementation based on MicroProfile config API.
 
+## [simple-config-spring](simple-config-spring/README.md)
+
+Simple configuration API implementation based on Spring config API.
+
 ## [emp-exception-mapper](emp-exception-mapper/README.md)
 
 Collection of MicroProfile ExceptionMappers.

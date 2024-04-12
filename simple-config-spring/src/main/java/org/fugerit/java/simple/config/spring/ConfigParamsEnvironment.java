@@ -1,7 +1,6 @@
 package org.fugerit.java.simple.config.spring;
 
 import org.fugerit.java.simple.config.AbstractConfigParams;
-import org.springframework.context.expression.EnvironmentAccessor;
 import org.springframework.core.env.Environment;
 
 import java.util.Optional;

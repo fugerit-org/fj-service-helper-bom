@@ -24,7 +24,7 @@ public class SimpleConfigFacade {
     public static <T extends SimpleConfigurable> T configure( Class<T> c, ConfigParams configParams ) {
         return SafeFunction.get( () -> {
             log.info( "type : {}, configParams : {}", c.getCanonicalName(), configParams );
-            Constructor constructor = c.getDeclaredConstructor();
+            Constructor<?> constructor = c.getDeclaredConstructor();
             log.info( "constructor : {}", constructor );
             T res = (T) constructor.newInstance();
             log.info( "res, call configure() : {}", res );
