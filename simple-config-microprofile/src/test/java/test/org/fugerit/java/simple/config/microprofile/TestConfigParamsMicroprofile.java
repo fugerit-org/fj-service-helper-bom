@@ -1,7 +1,6 @@
 package test.org.fugerit.java.simple.config.microprofile;
 
 import org.eclipse.microprofile.config.Config;
-import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.ConfigValue;
 import org.eclipse.microprofile.config.spi.ConfigBuilder;
 import org.eclipse.microprofile.config.spi.ConfigProviderResolver;
@@ -23,6 +22,7 @@ import java.util.Properties;
 class TestConfigParamsMicroprofile {
 
     @Test
+    @SuppressWarnings("unchecked")
     void testConfigParamsMicroprofile() throws IOException {
         Properties configProperties = new Properties();
         try (InputStream is = new FileInputStream( "src/test/resources/testconfig.properties" ) ) {

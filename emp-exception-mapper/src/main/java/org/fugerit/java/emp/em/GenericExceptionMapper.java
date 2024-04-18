@@ -4,11 +4,9 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
-import lombok.extern.slf4j.Slf4j;
 import org.fugerit.java.emp.sm.service.ServiceResponse;
 import org.fugerit.java.emp.sm.service.ServiceResponseHelper;
 
-@Slf4j
 @Provider
 public class GenericExceptionMapper implements ExceptionMapper<WebApplicationException> {
     @Override

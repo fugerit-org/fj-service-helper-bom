@@ -5,7 +5,6 @@ import org.fugerit.java.dsb.DataServiceIO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.io.InputStream;
 

@@ -5,7 +5,6 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.fugerit.java.emp.ex.WAExHelper;
-import org.fugerit.java.emp.sm.service.ServiceMessage;
 import org.fugerit.java.emp.sm.service.ServiceResponse;
 import org.fugerit.java.emp.sm.service.ServiceResponseHelper;
 import org.junit.jupiter.api.Assertions;

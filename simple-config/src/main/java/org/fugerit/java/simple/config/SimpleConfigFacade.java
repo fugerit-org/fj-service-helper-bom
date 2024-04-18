@@ -2,7 +2,6 @@ package org.fugerit.java.simple.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.fugerit.java.core.function.SafeFunction;
-import org.fugerit.java.core.lang.helpers.ClassHelper;
 
 import java.lang.reflect.Constructor;
 
@@ -13,6 +12,7 @@ public class SimpleConfigFacade {
 
     public static <T extends SimpleConfigurable> T configure( String type, ConfigParams configParams ) {
         try {
+        	@SuppressWarnings("unchecked")
             Class<T> c = (Class<T>) Class.forName( type );
             return configure( c, configParams );
         } catch ( ClassNotFoundException e ) {
@@ -26,7 +26,8 @@ public class SimpleConfigFacade {
             log.info( "type : {}, configParams : {}", c.getCanonicalName(), configParams );
             Constructor<?> constructor = c.getDeclaredConstructor();
             log.info( "constructor : {}", constructor );
-            T res = (T) constructor.newInstance();
+            @SuppressWarnings("unchecked")
+			T res = (T) constructor.newInstance();
             log.info( "res, call configure() : {}", res );
             res.configure( configParams );
             return res;

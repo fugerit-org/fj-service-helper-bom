@@ -25,7 +25,7 @@ class TestConfigParamsDefault {
         Assertions.assertFalse( valueX.isPresent() );
         // test null namepsace
         ConfigParams configAlt = new ConfigParamsDefault( null, configProperties ).withInfoLog();
-        String value3 = config.getValue( "testconfig.param3" );
+        String value3 = configAlt.getValue( "testconfig.param3" );
         Assertions.assertEquals( "value3", value3 );
         // simple configuration
         String typeOk = SimpleConfigurableObject.class.getName();

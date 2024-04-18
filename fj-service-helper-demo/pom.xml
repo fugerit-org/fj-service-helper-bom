@@ -71,7 +71,6 @@
     <dependency>
       <groupId>org.mvnpm</groupId>
       <artifactId>es-module-shims</artifactId>
-      <version>1.8.1</version>
     </dependency>
     <dependency>
       <groupId>org.fugerit.java</groupId>
