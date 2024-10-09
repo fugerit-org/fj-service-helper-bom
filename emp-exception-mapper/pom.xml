@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-service-helper-bom</artifactId>
-		<version>1.4.2-SNAPSHOT</version>
+		<version>1.4.2</version>
 	</parent>
 
 	<name>Eclipse MicroProfile Exception Mapper</name>
@@ -20,33 +20,6 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	
-	<build>
-
-		<plugins>
-
-			<plugin>
-				<groupId>org.fugerit.java</groupId>
-				<artifactId>native-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>generate-native-configuration</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<nativeHelperConfigPath>src/main/config/native-helper-config.yaml</nativeHelperConfigPath>
-							<reflectConfigJsonOutputPath>${project.build.outputDirectory}/META-INF/native-image/reflect-config.json</reflectConfigJsonOutputPath>
-							<warnOnError>true</warnOnError>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-		</plugins>
-
-	</build>
 
 	<dependencies>
 

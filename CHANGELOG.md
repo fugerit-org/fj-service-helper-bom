@@ -14,11 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.2 - 2024-10-09]
+
 ### Changed
 
 - spring-boot-version set to 3.3.4
 - quarkus-version set to 3.15.1
 - native-helper-maven-plugin-version set to 1.4.4
+
+### Fixed
+
+- native-image metadata configuration was not added to jar
 
 ## [1.4.1 - 2024-10-09]
 
@@ -27,10 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fj-bom parent set to 1.6.5
 - fj-version set to 8.6.5
 - native-helper-graalvm-version set to 1.4.4
-
-### Fixed
-
-- native-image metadata configuration was not added to jar
 
 ## [1.4.0 - 2024-04-12]
 

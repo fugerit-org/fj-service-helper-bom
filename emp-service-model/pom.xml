@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-service-helper-bom</artifactId>
-		<version>1.4.2-SNAPSHOT</version>
+		<version>1.4.2</version>
 	</parent>
 
 	<name>Eclipse MicroProfile Service Model</name>
@@ -31,14 +31,14 @@
 				<executions>
 					<execution>
 						<id>generate-native-configuration</id>
-						<phase>prepare-package</phase>
+						<phase>process-classes</phase>
 						<goals>
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<nativeHelperConfigPath>src/main/config/native-helper-config.yaml</nativeHelperConfigPath>
+							<nativeHelperConfigPath>${project.basedir}/src/main/config/native-helper-config.yaml</nativeHelperConfigPath>
 							<reflectConfigJsonOutputPath>${project.build.outputDirectory}/META-INF/native-image/reflect-config.json</reflectConfigJsonOutputPath>
-							<warnOnError>true</warnOnError>
+							<warnOnError>false</warnOnError>
 						</configuration>
 					</execution>
 				</executions>
