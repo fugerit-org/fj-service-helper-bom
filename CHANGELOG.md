@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- quarkus-version set to 3.15.1
 - native-helper-maven-plugin-version set to 1.4.4
 
 ## [1.4.1 - 2024-10-09]
