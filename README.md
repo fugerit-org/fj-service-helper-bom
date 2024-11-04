@@ -13,6 +13,18 @@ Helper project for service components abstraction
 [![Java build version](https://img.shields.io/badge/build%20on-java%2017+-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://universe.fugerit.org/src/docs/versions/java17.html)
 [![Apache Maven](https://img.shields.io/badge/Apache%20Maven-3.9.0+-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)](https://universe.fugerit.org/src/docs/versions/maven3_9.html)
 
+To manage all modules versions, add to dependencyManagement : 
+
+```xml
+<dependency>
+    <groupId>org.fugerit.java</groupId>
+    <artifactId>fj-service-helper-bom</artifactId>
+    <version>${fj-service-helper-version}</version>
+    <type>pom</type>
+    <scope>import</scope>
+</dependency>
+```
+
 This project is a wrapper for some service components abstraction modules : 
 
 ## [simple-config](simple-config/README.md)

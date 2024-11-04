@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>org.fugerit.java</groupId>
 		<artifactId>fj-bom</artifactId>
-		<version>1.6.5</version>
+		<version>1.6.7</version>
 		<relativePath></relativePath>
 	</parent>
 
-	<version>1.4.4-SNAPSHOT</version>
+	<version>1.4.4</version>
 	<packaging>pom</packaging>
 
 	<name>Fugerit Service Helper BOM</name>
@@ -38,9 +38,9 @@
 		<emp-exception-mapper-version>${fj-service-helper-version}</emp-exception-mapper-version>
 	    <data-service-base-version>${fj-service-helper-version}</data-service-base-version>
 	    <quarkus-redis-service-map-version>${fj-service-helper-version}</quarkus-redis-service-map-version>
-	    <quarkus.platform.version>3.15.1</quarkus.platform.version>
-		<spring-boot-version>3.3.4</spring-boot-version>
-		<native-helper-maven-plugin-version>1.4.4</native-helper-maven-plugin-version>
+	    <quarkus.platform.version>3.16.1</quarkus.platform.version>
+		<spring-boot-version>3.3.5</spring-boot-version>
+		<native-helper-maven-plugin-version>1.4.6</native-helper-maven-plugin-version>
 	</properties>
 
 	<licenses>

@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.4 - 2024-11-04]
+
+### Added
+
+- [simple-config] ConfigParamsHelper utility
+
+### Changed
+
+- spring-boot-version set to 3.3.5
+- quarkus-version set to 3.16.1
+
 ## [1.4.3 - 2024-10-09]
 
 ## Note
