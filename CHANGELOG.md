@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [data-service-base](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-base/CHANGELOG.md)
 - [data-service-jvfs](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-jvfs/CHANGELOG.md)
 
+### Added
+
+- [simple-config-microprofile] ConfigWrapper helpers
+
 ## [Unreleased]
 
 ## [1.4.4 - 2024-11-04]

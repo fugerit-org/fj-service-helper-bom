@@ -1,4 +1,4 @@
-package test.org.fugerit.java.simple.config.microprofile;
+package org.fugerit.java.simple.config.microprofile;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigValue;
