@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0 - 2025-06-30]
+
 ### Added
 
 - simple-config ConfigParamsOverride
@@ -14,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - fj-bom version 2.0.2
+- Disabled test for fj-server-helper-demo (for now)
 
 ## [1.4.4 - 2024-11-04]
 
