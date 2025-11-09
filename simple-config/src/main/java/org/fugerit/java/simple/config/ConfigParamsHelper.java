@@ -3,11 +3,14 @@ package org.fugerit.java.simple.config;
 import org.fugerit.java.core.cfg.ConfigRuntimeException;
 import org.fugerit.java.core.io.helper.HelperIOException;
 import org.fugerit.java.core.lang.helpers.ClassHelper;
+import org.fugerit.java.core.lang.helpers.StringUtils;
+import org.fugerit.java.core.util.PropsIO;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Properties;
 
 public class ConfigParamsHelper {
 
@@ -46,6 +49,27 @@ public class ConfigParamsHelper {
             } else {
                 throw new IOException( String.format( "File not found: %s", path ) );
             }
+        }
+    }
+
+    public static Properties convertFromNamespace( Properties config, String fromNamespace ) {
+        if ( StringUtils.isNotEmpty( fromNamespace ) ) {
+            return PropsIO.subProps( config, fromNamespace );
+        } else {
+            Properties params = new Properties();
+            params.putAll( config );
+            return params;
+        }
+    }
+
+    public static Properties convert( Properties config, String fromNamespace, String toNamespace ) {
+        Properties result = convertFromNamespace( config, fromNamespace );
+        if ( StringUtils.isNotEmpty( toNamespace ) ) {
+            Properties newResult = new Properties();
+            result.entrySet().forEach( e -> newResult.put( toNamespace+e.getKey(), e.getValue() ) );
+            return newResult;
+        } else {
+            return result;
         }
     }
 

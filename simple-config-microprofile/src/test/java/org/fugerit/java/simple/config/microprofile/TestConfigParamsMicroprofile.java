@@ -1,6 +1,7 @@
 package org.fugerit.java.simple.config.microprofile;
 
 import org.eclipse.microprofile.config.Config;
+import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.ConfigValue;
 import org.eclipse.microprofile.config.spi.ConfigBuilder;
 import org.eclipse.microprofile.config.spi.ConfigProviderResolver;
@@ -10,6 +11,7 @@ import org.fugerit.java.simple.config.ConfigParams;
 import org.fugerit.java.simple.config.ConfigParamsDefault;
 import org.fugerit.java.simple.config.microprofile.ConfigParamsMicroprofile;
 import org.fugerit.java.simple.config.microprofile.ConfigParamsMicroprofileLoose;
+import org.fugerit.java.simple.config.microprofile.helper.ConfigProviderToProperties;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -55,7 +57,7 @@ class TestConfigParamsMicroprofile {
                     }
                     @Override
                     public Iterable<String> getPropertyNames() {
-                        return null;
+                        return configProperties.stringPropertyNames();
                     }
                     @Override
                     public Iterable<ConfigSource> getConfigSources() {
@@ -99,6 +101,9 @@ class TestConfigParamsMicroprofile {
         String value3 = configLoose.getValue( "testconfig.param3" );
         Assertions.assertEquals( "value3", value3 );
         Assertions.assertNull( configLoose.getValue( "notPresent" ) );
+        // test config provider to properties
+        Properties convert = ConfigProviderToProperties.configToProperties(ConfigProvider.getConfig(), null, null );
+        Assertions.assertEquals( "value1", convert.getProperty( "testconfig.param1" ) );
     }
 
 }

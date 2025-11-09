@@ -45,5 +45,21 @@ class TestConfigParamsHelper {
         Assertions.assertThrows( ConfigRuntimeException.class, () -> ConfigParamsHelper.resoveRequired( config, NOT_FOUND ) );
     }
 
+
+    @Test
+    void testConfigParamsHelperConversion() throws IOException {
+        String value1 = "value1";
+        Properties config = PropsIO.loadFromClassLoaderSafe( "testconfig.properties" );
+        Properties convert1 = ConfigParamsHelper.convert( config, null, null );
+        log.info( "convert 1 -> {}", convert1 );
+        Assertions.assertEquals( value1, convert1.getProperty( "testconfig.param1" ) );
+        Properties convert2 = ConfigParamsHelper.convert( config, "testconfig.", null );
+        log.info( "convert 2 -> {}", convert2 );
+        Assertions.assertEquals( value1, convert2.getProperty( "param1" ) );
+        Properties convert3 = ConfigParamsHelper.convert( config, "testconfig.", "convert." );
+        log.info( "convert 3 -> {}", convert3 );
+        Assertions.assertEquals( value1, convert3.getProperty( "convert.param1" ) );
+    }
+
 }
 
