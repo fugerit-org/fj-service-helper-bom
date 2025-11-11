@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [data-service-base](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-base/CHANGELOG.md)
 - [data-service-jvfs](https://github.com/fugerit-org/fj-service-helper-bom/blob/main/data-service-jvfs/CHANGELOG.md)
 
+[Unreleased]
+
+### Fixed
+
+- ConfigProviderToProperties with namespace
+
 ## [1.5.2 - 2025-11-11]
 
 ### Fixed

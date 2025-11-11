@@ -45,7 +45,9 @@ public class ConfigProviderToProperties {
         Properties params = new Properties();
         for ( String propertyName : config.getPropertyNames() ) {
             if ( fromNamespace != null ) {
-                handleCurrent( config, propertyName, propertyName.substring( fromNamespace.length() ), toNamespace, params, toUnsafeHandler( silent ) );
+                if ( propertyName.startsWith( fromNamespace ) ) {
+                    handleCurrent( config, propertyName, propertyName.substring( fromNamespace.length() ), toNamespace, params, toUnsafeHandler( silent ) );
+                }
             } else {
                 handleCurrent( config, propertyName, propertyName, toNamespace, params, toUnsafeHandler( silent ) );
             }
