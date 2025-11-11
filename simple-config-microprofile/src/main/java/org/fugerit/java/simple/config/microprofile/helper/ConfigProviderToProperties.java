@@ -2,11 +2,8 @@ package org.fugerit.java.simple.config.microprofile.helper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.microprofile.config.Config;
-import org.eclipse.microprofile.config.ConfigProvider;
 import org.fugerit.java.core.function.SafeFunction;
 import org.fugerit.java.core.function.UnsafeVoid;
-import org.fugerit.java.core.lang.helpers.StringUtils;
-import org.fugerit.java.simple.config.ConfigParamsHelper;
 
 import java.util.Properties;
 import java.util.function.Consumer;
