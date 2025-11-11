@@ -1,5 +1,6 @@
 package org.fugerit.java.simple.config.microprofile;
 
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.ConfigValue;
@@ -21,6 +22,7 @@ import java.io.InputStream;
 import java.util.Optional;
 import java.util.Properties;
 
+@Slf4j
 class TestConfigParamsMicroprofile {
 
     @Test
@@ -102,8 +104,14 @@ class TestConfigParamsMicroprofile {
         Assertions.assertEquals( "value3", value3 );
         Assertions.assertNull( configLoose.getValue( "notPresent" ) );
         // test config provider to properties
-        Properties convert = ConfigProviderToProperties.configToProperties(ConfigProvider.getConfig(), null, null );
+        Properties convert = ConfigProviderToProperties.configToProperties(ConfigProvider.getConfig() );
         Assertions.assertEquals( "value1", convert.getProperty( "testconfig.param1" ) );
+        Properties convertAlt = ConfigProviderToProperties.configToProperties(ConfigProvider.getConfig(), "testconfig.", "newconfig." );
+        log.info( "convertAlt {}", convertAlt );
+        Assertions.assertEquals( "value2", convertAlt.getProperty( "newconfig.param2" ) );
+        Properties convertSilent = ConfigProviderToProperties.configToProperties(ConfigProvider.getConfig(), "testconfig.", "silent.", Boolean.TRUE );
+        log.info( "convertSilent {}", convertSilent );
+        Assertions.assertEquals( "value3", convertSilent.getProperty( "silent.param3" ) );
     }
 
 }
